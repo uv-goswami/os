@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void display(string name_of_process[], int burst_time[], int arrival_time[], int number_of_processes, int waiting_time[], int turnaround_time[]) {
+void display(string name_of_process[],int burst_time[],int arrival_time[],int number_of_processes,int waiting_time[],int turnaround_time[]){
     double total_waiting_time = 0;
     double total_turnaround_time = 0;
 
@@ -12,9 +12,13 @@ void display(string name_of_process[], int burst_time[], int arrival_time[], int
     for (int num = 0; num < number_of_processes; num++) {
         total_waiting_time += waiting_time[num];
         total_turnaround_time += turnaround_time[num];
-        cout << name_of_process[num] << "\t\t" << burst_time[num] << "\t\t" << arrival_time[num] << "\t\t" << waiting_time[num] << "\t\t" << turnaround_time[num] << endl;
+        cout << name_of_process[num] << "\t\t" << burst_time[num] << "\t\t" << arrival_time[num];
+        cout<< "\t\t" << waiting_time[num];
+        cout << "\t\t" << turnaround_time[num] << endl;
     }
-    cout << "\nAverage Waiting Time is: " << total_waiting_time / number_of_processes << "\nAverage TurnAround Time is: " << total_turnaround_time / number_of_processes << endl;
+    cout << "\nAverage Waiting Time is: " << total_waiting_time/number_of_processes;
+    cout << "\nAverage TurnAround Time is: ";
+    cout<< total_turnaround_time / number_of_processes << endl;
 }
 
 void shortest_remaining_time_first(string name_of_process[], int number_of_processes, int burst_time[], int arrival_time[]) {

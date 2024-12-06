@@ -25,4 +25,4 @@ int main() {
         cout << "Parent is waiting for child to finish...\n"; 
         wait(NULL);  
         cout << "Child has finished. Parent is now terminating.\n";} 
-    return 0;} 
+    return 0;}
